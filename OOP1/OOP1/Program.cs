@@ -10,6 +10,22 @@ namespace OOP1
     public class Program
     {
 
+        // an interface that indecates a runable animal , like horses and cates 
+        // contains high speed method , distance method and accelearation method
+        public interface Irunable { 
+                // mutiple inheritance 
+                // 
+                string highSpeed();
+                string Distance();
+            string Acceleration();
+        }
+
+        // an interface that determine if animal can be raised at home , like cats
+       
+        public interface Idomestic {
+
+            string animalisDomestic();
+        }
         public abstract class animal // Abstract , Parent class for 'animal' class
     {
 
@@ -20,8 +36,10 @@ namespace OOP1
 
         abstract public void numberOfLegs();
 
-        //
-    }
+            //
+
+           
+        }
 
 
         // Inheritance
@@ -103,10 +121,14 @@ namespace OOP1
     }
 
         // Inheritance
-        public class Horse : mammals // Concrete class , Child of 'mammals' class
+        public class Horse : mammals , Irunable // Concrete class , Child of 'mammals' class
     {
+            public string highSpeed() { return "Horses high speed is 54.7 miles per hour"; }
+            public string Distance() { return "Horses can cut a distance up to five miles per one run"; }
+            public string Acceleration() { return "Horses accelerate by 17 miles per hour"; }
 
-        public override string Color
+
+            public override string Color
         {
             set { this.color = "Brown"; }
             get { return color; }
@@ -196,8 +218,31 @@ namespace OOP1
     }
 
         // Inheritance
-        public class Cat : mammals // Concrete class , Child of 'mammals' class
-    {
+        public class Cat : mammals , Irunable , Idomestic  // Concrete class , Child of 'mammals' class
+        {
+
+            
+
+            public string highSpeed() {
+
+                return "Cats high speed is 30 miles per hour";
+            }
+
+            public string Acceleration() {
+
+               return "Cats accelerate by 7 miles per hour";
+            }
+
+            public string Distance() {
+
+              return "Cats can cut a distance between 40 and 200 metres per one run";
+            }
+
+            public string animalisDomestic() {
+
+               return "Cats are domestic animals";
+            }
+
 
         public override bool HasTail
         {
@@ -211,7 +256,8 @@ namespace OOP1
             get { return this.color; }
         }
 
-        public override String Eat()
+
+            public override String Eat()
         {
             return "Cats Eat mice";
         }
@@ -321,6 +367,8 @@ namespace OOP1
             P.Eat();
             Cat C = new Cat();
             C.catsFeature();
+            Irunable run = new Horse();
+            run.Distance();
             
             }
         }
