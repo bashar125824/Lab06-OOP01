@@ -1,4 +1,9 @@
+# Lab06-OOP01 and Lab06-OOP02
+
+
 # Lab06-OOP01
+
+
 
 ## An introduction to the project : 
 
@@ -37,5 +42,37 @@ protected bool hasTail;
 public abstract class animal
 
 ```
+
+---
+
+
+# Lab06-OOP02
+
+
+---
+
+
+***In this lab , I used **interfaces** in my code***
+
+
+---
+
+
+## What is interfaces :
+
+---
+
+
+***Blueprint of a class. It is like abstract class because all the methods which are declared inside the interface are abstract methods. It cannot have method body and cannot be instantiated. It is used to achieve multiple inheritance which can't be achieved by class.***
+
+---
+
+***example to clarify the idea in the code :***
+
+---
+
+
+***animal , cat and mammals classes  , animal and mammals are parent classes and cat is child class from mammals , in inheritance , if I want to code that (Not logically) , I can't say that cat is an animal and mammals in same time , but if animal and classes are interfaces then I can consider the cat class as an animal and mammals .***
+
 
 ---
